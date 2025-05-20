@@ -1,0 +1,26 @@
+{
+  "name": "vermillion",
+  "version": "1.0.0",
+  "description": "A web component UI library",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "vite build",
+    "serve": "vite",
+    "test": "nx test"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "sass": "^1.32.0",
+    "tailwindcss": "^2.0.0"
+  },
+  "devDependencies": {
+    "vite": "^2.0.0",
+    "nx": "^12.0.0"
+  },
+  "nx": {
+    "npmScope": "vermillion",
+    "affected": {
+      "defaultBase": "main"
+    }
+  }
+}
