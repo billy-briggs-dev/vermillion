@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -28,14 +30,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v3
+
       - name: Check formatting
-        run: pnpm prettier --check .
+        run: pnpm nx format:check
 
-      - name: Lint
-        run: pnpm lint
+      - name: Lint affected projects
+        run: pnpm nx affected --target=lint
 
-      - name: Build
-        run: pnpm build
+      - name: Build affected projects
+        run: pnpm nx affected --target=build
 
-      - name: Run tests
-        run: pnpm test
+      - name: Test affected projects
+        run: pnpm nx affected --target=test
