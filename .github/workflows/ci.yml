@@ -13,31 +13,29 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Fetch all history for affected commands
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'pnpm'
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Check formatting
-        run: pnpm nx format:check
+        run: pnpm prettier --check .
 
       - name: Lint
-        run: pnpm nx affected --target=lint --parallel
+        run: pnpm lint
 
       - name: Build
-        run: pnpm nx affected --target=build --parallel
+        run: pnpm build
 
       - name: Run tests
-        run: pnpm nx affected --target=test --parallel
+        run: pnpm test
