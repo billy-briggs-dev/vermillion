@@ -1,9 +1,12 @@
 {
-  "name": "@vermillion/source",
+  "name": "@vermillion/workspace",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
+  "scripts": {
+    "nx": "nx"
+  },
+
   "dependencies": {
     "lit": "^3.3.0",
     "react": "^19.1.0",
