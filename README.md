@@ -1,68 +1,76 @@
 # Vermillion
 
-Vermillion is a web component UI library that is:
+<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-1. Built with [Lit](https://lit.dev/)
-2. Compatible with [Sass](https://sass-lang.com/)
-3. Compatible with [Tailwind CSS](https://tailwindcss.com/)
-4. Compatible with frameworks like React, Vue, Angular, Svelte, React Native, etc.
-5. Supports custom theming
-6. Prioritizes accessibility
-7. Uses [Vite](https://vitejs.dev/)
-8. Uses [Nx](https://nx.dev/)
+✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
 
-## Installation
+Run `npx nx graph` to visually explore what got created. Now, let's get you up to speed!
 
-To install Vermillion, you can use npm or yarn:
+## Finish your CI setup
 
-```bash
-npm install vermillion
-# or
-yarn add vermillion
+[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/p7xVp9Ad3V)
+
+
+## Run tasks
+
+To run tasks with Nx use:
+
+```sh
+npx nx <target> <project-name>
 ```
 
-## Usage
+For example:
 
-To use Vermillion components in your project, you need to import them:
-
-```javascript
-import { MyButton } from 'vermillion';
+```sh
+npx nx build myproject
 ```
 
-Then you can use the components in your HTML:
+These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
 
-```html
-<my-button>Click me</my-button>
+[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## Add new projects
+
+While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+
+To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
+```sh
+npx nx add @nx/react
 ```
 
-## Theming
+Use the plugin's generator to create new projects. For example, to create a new React app or library:
 
-Vermillion supports custom theming using Sass. You can override the default theme by creating a new Sass file and importing it in your project:
+```sh
+# Generate an app
+npx nx g @nx/react:app demo
 
-```scss
-@import 'vermillion/src/styles/theme.scss';
-
-// Override default theme variables
-$primary-color: #ff0000;
-$secondary-color: #00ff00;
+# Generate a library
+npx nx g @nx/react:lib some-lib
 ```
 
-## Tailwind CSS
+You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
 
-Vermillion is compatible with Tailwind CSS. You can use Tailwind classes in your components:
+[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-```html
-<my-button class="bg-blue-500 text-white">Click me</my-button>
-```
 
-## Accessibility
+[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-Vermillion prioritizes accessibility. All components are built with accessibility in mind and follow best practices for accessible web design.
+## Install Nx Console
 
-## Contributing
+Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
 
-We welcome contributions to Vermillion! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
+[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## License
+## Useful links
 
-Vermillion is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+Learn more:
+
+- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+And join the Nx community:
+- [Discord](https://go.nx.dev/community)
+- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
+- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
+- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
